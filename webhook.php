@@ -1,5 +1,8 @@
 <?php
 echo"Hi webhook!";
+  $myfile = fopen("newfile.txt", "w+") or die("Unable to open file!");
+  $name = time();
+ fwrite($myfile, '\n recive -'.time());
  $challenge = $_REQUEST['hub_challenge'];
  $verify_token = $_REQUEST['hub_verify_token'];
  if ($verify_token == 'abc123') {echo $challenge;}
@@ -11,8 +14,8 @@ echo"Hi webhook!";
 
   $input = json_decode(file_get_contents('php://input'), true);
   error_log(print_r($input, true));
-  $name = mktime();
-  $myfile = fopen("newfile.txt", "w") or die("Unable to open file!");
+  
+ 
   $txt = print_r($input, true);
   fwrite($myfile, $txt);
   fclose($myfile);
