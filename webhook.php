@@ -20,7 +20,7 @@
   fwrite($myfile, $txt);
   fclose($myfile);
 
-file_put_contents("test.txt",print_r($input),'FILE_APPEND' );
+file_put_contents("test.txt",$input,'FILE_APPEND' );
   
  
  ?>
