@@ -1,2 +1,4 @@
 <?php
-php_info();
+echo "Hi Pranav";
+
+?>
