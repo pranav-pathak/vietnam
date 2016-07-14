@@ -19,6 +19,8 @@
   $txt = print_r($input, true);
   fwrite($myfile, $txt);
   fclose($myfile);
- 
+
+file_put_contents("test.txt",print_r($input),'FILE_APPEND' );
+  
  
  ?>
