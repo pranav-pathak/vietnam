@@ -1,5 +1,5 @@
 <?php
-echo"Hi webhook!";
+
   $myfile = fopen("newfile.txt", "w+") or die("Unable to open file!");
   $name = time();
  fwrite($myfile, '\n recive -'.time());
