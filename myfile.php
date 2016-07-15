@@ -9,9 +9,9 @@ fclose($myfile);
 // echo $leadgen_id = 1043685219000436;
 
 
-echo "facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php";
+// echo "facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php";
 
-require_once __DIR__ . '/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
+// require_once __DIR__ . '/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
@@ -40,5 +40,3 @@ print_r($graphObject);
 
 echo "PPPPPPPPP!!!!";
 ?>
-GET /v2.7/638113826341564/1043685219000436 HTTP/1.1
-Host: graph.facebook.com
