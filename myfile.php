@@ -6,7 +6,7 @@ $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
 echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
 fclose($myfile);
 
-require_once __DIR__ . '/src/Facebook/autoload.php';
+// require_once __DIR__ . '/src/Facebook/autoload.php';
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
