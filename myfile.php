@@ -9,7 +9,7 @@ fclose($myfile);
 // echo $leadgen_id = 1043685219000436;
 
 
-
+echo "facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php";
 
 require_once __DIR__ . 'facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 
@@ -33,13 +33,7 @@ $graphObject = $response->getGraphObject();
 /* handle the result */
 print_r($graphObject);
 
-// $txt1 = $graphObject;
-
- // $handle = fopen($myfile1, "a")
-  // //fwrite($myfile, $txt);
-  // fwrite($handle,$txt1);
-  // fclose($myfile);
-  
+echo "PPPPPPPPP!!!!";
 ?>
 GET /v2.7/638113826341564/1043685219000436 HTTP/1.1
 Host: graph.facebook.com
