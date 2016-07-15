@@ -17,9 +17,9 @@
   
  
   $txt = print_r($input, true);
-  $handle = fopen($myfile, "a");
-  //fwrite($myfile, $txt);
-  fwrite($handle,$txt);
+  // $handle = fopen($myfile, "a");
+  fwrite($myfile, $txt);
+  // fwrite($handle,$txt);
   fclose($myfile);
   $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
   $handle = fopen("leadgen.txt", "w+");
