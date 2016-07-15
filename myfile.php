@@ -10,25 +10,31 @@ require_once __DIR__ . '/Facebook/autoload.php';
  
 echo"required!";
 
-$fb = new Facebook\Facebook([
-  'app_id' => '638113826341564',
-  'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
-  'default_graph_version' => 'v2.7',
-]);
-$request = $fb->request('GET', $leadgen_id);
+use FacebookAds\Object\Lead;
+
+$form = new Lead($leadgen_id);
+$form->read();
 
 
-// $fb = new Facebook\Facebook(/* . . . */);
-$request = $fb->request('GET', $leadgen_id);
-print_r($request);
-// Send the request to Graph
-$response = $fb->getClient()->sendRequest($request);
-print_r($response);
+// $fb = new Facebook\Facebook([
+  // 'app_id' => '638113826341564',
+  // 'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
+  // 'default_graph_version' => 'v2.7',
+// ]);
+// $request = $fb->request('GET', $leadgen_id);
+
+
+// // $fb = new Facebook\Facebook(/* . . . */);
+// // $request = $fb->request('GET', $leadgen_id);
+// print_r($request);
+// // Send the request to Graph
+// $response = $fb->getClient()->sendRequest($request);
+// print_r($response);
   
-$graphNode = $response->getGraphNode();
+// $graphNode = $response->getGraphNode();
 
 
-echo 'User name: ' . $graphNode['name'];
+// echo 'User name: ' . $graphNode['name'];
 
 
 // include("/Facebook/autoload.php");
@@ -51,6 +57,3 @@ echo 'User name: ' . $graphNode['name'];
 
 // echo "PPPPPPPPP!!!!";
 ?>
-
-GET /v2.7/638113826341564/1043743585661266 HTTP/1.1
-Host: graph.facebook.com
