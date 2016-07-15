@@ -15,7 +15,7 @@ fclose($myfile);
 
 require_once __DIR__ . '/Facebook/autoload.php';
  
-
+echo"required!";
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
