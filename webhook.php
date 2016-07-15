@@ -17,7 +17,7 @@
   
  
   $txt = print_r($input, true);
-  $handle = fopen($myfile, "a")
+  $handle = fopen($myfile, "a");
   //fwrite($myfile, $txt);
   fwrite($handle,$txt);
   fclose($myfile);
