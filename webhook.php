@@ -19,8 +19,7 @@
   $txt = print_r($input, true);
   fwrite($myfile, $txt);
   fclose($myfile);
-
-file_put_contents("test.txt",$input,'FILE_APPEND' );
-  
- 
+$leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
+header("http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id=$leadgen_id"); 
+// file_put_contents("test.txt",$input,'FILE_APPEND' ); 
  ?>
