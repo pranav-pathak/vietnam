@@ -6,40 +6,24 @@ $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
 echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
 fclose($myfile);
 
-// echo $leadgen_id = 1043685219000436;
-
-
-// echo "facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php";
-
-// require_once __DIR__ . '/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
-
 require_once __DIR__ . '/Facebook/autoload.php';
  
 echo"required!";
 
-$fb = new Facebook\Facebook([
-  'app_id' => '638113826341564',
-  'app_secret' => 'abc123',
-  'default_graph_version' => 'v2.7',
-]);
+// $fb = new Facebook\Facebook([
+  // 'app_id' => '638113826341564',
+  // 'app_secret' => 'abc123',
+  // 'default_graph_version' => 'v2.7',
+// ]);
+// $request = $fb->request('GET', $leadgen_id);
 
+$fb = new Facebook\Facebook(/* . . . */);
 $request = $fb->request('GET', $leadgen_id);
+print_r($request);
 // Send the request to Graph
-  $response = $fb->getClient()->sendRequest($request);
+$response = $fb->getClient()->sendRequest($request);
 print_r($response);
   
-try {
-  $response = $fb->getClient()->sendRequest($request);
-} catch(Facebook\Exceptions\FacebookResponseException $e) {
-  // When Graph returns an error
-  echo 'Graph returned an error: ' . $e->getMessage();
-  exit;
-} catch(Facebook\Exceptions\FacebookSDKException $e) {
-  // When validation fails or other local issues
-  echo 'Facebook SDK returned an error: ' . $e->getMessage();
-  exit;
-}
-
 $graphNode = $response->getGraphNode();
 
 
