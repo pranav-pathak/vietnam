@@ -7,7 +7,7 @@ echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
 fclose($myfile);
 
 
-// include(/Facebook/autoload.php);
+include(/Facebook/autoload.php);
 /* PHP SDK v5.0.0 */
 /* make the API call */
 $request = new FacebookRequest(
@@ -22,7 +22,7 @@ print_r($graphObject);
 
 // $txt1 = $graphObject;
 
- // $handle = fopen($myfile, "a")
+ // $handle = fopen($myfile1, "a")
   // //fwrite($myfile, $txt);
   // fwrite($handle,$txt1);
   // fclose($myfile);
