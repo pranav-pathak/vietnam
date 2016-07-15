@@ -23,6 +23,7 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.5',
 ]);
 
+print_r($fb);
 
 // include("/Facebook/autoload.php");
 /* PHP SDK v5.0.0 */
