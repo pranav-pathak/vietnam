@@ -8,22 +8,23 @@ fclose($myfile);
 
 
 // include(/Facebook/autoload.php);
-// /* PHP SDK v5.0.0 */
-// /* make the API call */
-// $request = new FacebookRequest(
-  // $session,
-  // 'GET',
-  // '/638113826341564/'.$leadgen_id
-// );
-// $response = $request->execute();
-// $graphObject = $response->getGraphObject();
-// /* handle the result */
+/* PHP SDK v5.0.0 */
+/* make the API call */
+$request = new FacebookRequest(
+  $session,
+  'GET',
+  '/638113826341564/'.$leadgen_id
+);
+$response = $request->execute();
+$graphObject = $response->getGraphObject();
+/* handle the result */
+print_r($graphObject);
 
-// $txt1 = print_r($graphObject, true);
+$txt1 = $graphObject;
 
- // $handle = fopen($myfile, "a")
-  // //fwrite($myfile, $txt);
-  // fwrite($handle,$txt1);
-  // fclose($myfile);
+ $handle = fopen($myfile, "a")
+  //fwrite($myfile, $txt);
+  fwrite($handle,$txt1);
+  fclose($myfile);
   
 ?>
