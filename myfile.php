@@ -10,19 +10,32 @@ require_once __DIR__ . '/Facebook/autoload.php';
  
 echo"required!";
 
-use FacebookAds\Api;
-
-$accounts = Api::instance()->call('/me/accounts');
 
 
-echo "accounts";
-print_r($account);
-
-echo "Lead";
 use FacebookAds\Object\Lead;
 
 $form = new Lead($leadgen_id);
 $form->read();
+
+print_r($form);
+
+
+
+
+// GET /oauth/access_token?  
+    // grant_type=fb_exchange_token&amp;           
+    // client_id=638113826341564&amp;
+    // client_secret=8f5d4971c70fe677c9c9b2c44e74aa9b&amp;
+    // fb_exchange_token={EAAJEXHPyArwBAFIsBOTzf921pAZC7Y2muBkOcFgcJufsFqipz7gRTUjbmEUE4NRwchnk1rF6t9xYuccdN5vktesf7oBckaPR6cU3qMMpyaoGvoUc1FoXCzX7nxOoal956QEIrw5z0iMZAqtqZBZClZCKNIcUIj6Wy1TZAXafUcTQZDZD}
+
+// echo "accounts";
+// print_r($account);
+
+// echo "Lead";
+// use FacebookAds\Object\Lead;
+
+// $form = new Lead($leadgen_id);
+// $form->read();
 
 
 // $fb = new Facebook\Facebook([
