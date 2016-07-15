@@ -23,14 +23,11 @@ $fb = new Facebook\Facebook([
   'default_graph_version' => 'v2.7',
 ]);
 
-print_r($fb);
-
-// $fbApp = new Facebook\FacebookApp('638113826341564', $leadgen_id);
-// $request = new Facebook\FacebookRequest($fbApp, 'abc123', 'GET', $leadgen_id);
-
-// $fb = new Facebook\Facebook(/* . . . */);
 $request = $fb->request('GET', $leadgen_id);
 // Send the request to Graph
+  $response = $fb->getClient()->sendRequest($request);
+print_r($response);
+  
 try {
   $response = $fb->getClient()->sendRequest($request);
 } catch(Facebook\Exceptions\FacebookResponseException $e) {
@@ -45,7 +42,7 @@ try {
 
 $graphNode = $response->getGraphNode();
 
-print_r($response);
+
 echo 'User name: ' . $graphNode['name'];
 
 
