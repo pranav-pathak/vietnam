@@ -20,7 +20,7 @@
   fwrite($myfile, $txt);
   fclose($myfile);
 $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
-header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
+// header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
 
 // file_put_contents("test.txt",$input,'FILE_APPEND' ); 
  ?>
