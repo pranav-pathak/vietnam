@@ -2,11 +2,11 @@
 
 $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
-// $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
-// echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
-// fclose($myfile);
+$myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
+echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
+fclose($myfile);
 
-echo $leadgen_id = 1043685219000436;
+// echo $leadgen_id = 1043685219000436;
 
 
 
