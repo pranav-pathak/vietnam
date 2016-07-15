@@ -17,10 +17,37 @@
   
  
   $txt = print_r($input, true);
-  fwrite($myfile, $txt);
+  $handle = fopen($myfile, "a")
+  //fwrite($myfile, $txt);
+  fwrite($handle,$txt);
   fclose($myfile);
+  
+
+  
 $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
 // header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
 
-// file_put_contents("test.txt",$input,'FILE_APPEND' ); 
+
+include(/Facebook/autoload.php);
+
+
+/* PHP SDK v5.0.0 */
+/* make the API call */
+$request = new FacebookRequest(
+  $session,
+  'GET',
+  '/638113826341564/'.$leadgen_id
+);
+$response = $request->execute();
+$graphObject = $response->getGraphObject();
+/* handle the result */
+
+$txt1 = print_r($graphObject, true);
+
+ $handle = fopen($myfile, "a")
+  //fwrite($myfile, $txt);
+  fwrite($handle,$txt1);
+  fclose($myfile);
+  
+
  ?>
