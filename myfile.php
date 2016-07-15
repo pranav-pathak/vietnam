@@ -3,6 +3,11 @@
 include(/Facebook/autoload.php);
 $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
+$myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
+echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
+fclose($myfile);
+
+
 /* PHP SDK v5.0.0 */
 /* make the API call */
 $request = new FacebookRequest(
