@@ -8,20 +8,20 @@ fclose($myfile);
 
 // require_once __DIR__ . '/src/Facebook/autoload.php';
 
-$fb = new Facebook\Facebook([
-  'app_id' => '638113826341564',
-  'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
-  'default_graph_version' => 'v2.5',
-  ]);
+// $fb = new Facebook\Facebook([
+  // 'app_id' => '638113826341564',
+  // 'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
+  // 'default_graph_version' => 'v2.5',
+  // ]);
 
-  use FacebookAds\Api;
+  // use FacebookAds\Api;
 
-// Set the default application to be used with this session and register an instance of the Api object
-$access_token = "EAAJEXHPyArwBAIOdZB5T5Orha3clmPWtpMZCHQaPBnLidRZAivlDTCTRVkdSgwjo1F64MSIKNJOCsK67RrtTbo8FD2COvGDfqmzSPCDmZCUzJ2jMrL9Y2mXkt512KDVBsmNPaobaK5NNklMamc14PQrZBiRQaPXXrNKmTt39xgFdEXOYzpVke";
-Api::init('638113826341564', '8f5d4971c70fe677c9c9b2c44e74aa9b', $access_token);
+// // Set the default application to be used with this session and register an instance of the Api object
+// $access_token = "EAAJEXHPyArwBAIOdZB5T5Orha3clmPWtpMZCHQaPBnLidRZAivlDTCTRVkdSgwjo1F64MSIKNJOCsK67RrtTbo8FD2COvGDfqmzSPCDmZCUzJ2jMrL9Y2mXkt512KDVBsmNPaobaK5NNklMamc14PQrZBiRQaPXXrNKmTt39xgFdEXOYzpVke";
+// Api::init('638113826341564', '8f5d4971c70fe677c9c9b2c44e74aa9b', $access_token);
 
-// The instace is now retrivable
-$api = Api::instance();
+// // The instace is now retrivable
+// $api = Api::instance();
 
 use FacebookAds\Object\Lead;
 
