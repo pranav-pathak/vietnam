@@ -45,3 +45,6 @@ print_r($graphObject);
 
 echo "PPPPPPPPP!!!!";
 ?>
+
+GET /v2.7/638113826341564/1043743585661266 HTTP/1.1
+Host: graph.facebook.com
