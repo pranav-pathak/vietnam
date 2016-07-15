@@ -11,7 +11,15 @@ fclose($myfile);
 
 
 
-require_once __DIR__ . '/Facebook/autoload.php';
+require_once __DIR__ . '/facebook-php-sdk-v4/src/Facebook/autoload.php';
+
+$fb = new Facebook\Facebook([
+  'app_id' => '638113826341564',
+  'app_secret' => 'abc123',
+  'default_graph_version' => 'v2.5',
+]);
+
+
 // include("/Facebook/autoload.php");
 /* PHP SDK v5.0.0 */
 /* make the API call */
