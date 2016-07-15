@@ -13,9 +13,15 @@ $fb = new Facebook\Facebook([
   'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
   'default_graph_version' => 'v2.5',
   ]);
- 
-echo"required!";
 
+  use FacebookAds\Api;
+
+// Set the default application to be used with this session and register an instance of the Api object
+$access_token = "EAAJEXHPyArwBABZC0ZCEB3iGZCwujqeh6YCpHeJNeuLkQIWdhGyi97m27cFshfjuR5MFFHCDkouosnQkqghgZA9gohTTCGfys7BaWRrrWx5isZCgEgMX55OWzFbV5oujGsZAGsFOOpYDemaqqcjd6Pn3kVrh6pbZCsvfHFt3oLCBXTl7VGxmu4h";
+Api::init('638113826341564', '8f5d4971c70fe677c9c9b2c44e74aa9b', $access_token);
+
+// The instace is now retrivable
+$api = Api::instance();
 
 use FacebookAds\Object\Lead;
 
