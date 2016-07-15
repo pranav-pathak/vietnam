@@ -21,7 +21,7 @@ use Facebook\FacebookAuthorizationException;
 use Facebook\GraphObject;
  
 // init app with app id (APPID) and secret (SECRET)
-FacebookSession::setDefaultApplication(638113826341564,8f5d4971c70fe677c9c9b2c44e74aa9b);
+FacebookSession::setDefaultApplication('638113826341564','8f5d4971c70fe677c9c9b2c44e74aa9b');
  
 // login helper with redirect_uri
 $helper = new FacebookRedirectLoginHelper( 'https://vietnam-test-server.herokuapp.com' );
