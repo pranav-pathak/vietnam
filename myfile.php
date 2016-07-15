@@ -11,7 +11,7 @@ fclose($myfile);
 
 
 
-require_once __DIR__ . '/facebook-php-sdk-v4facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
+require_once __DIR__ . 'facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
