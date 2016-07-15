@@ -10,14 +10,15 @@ require_once __DIR__ . '/Facebook/autoload.php';
  
 echo"required!";
 
-// $fb = new Facebook\Facebook([
-  // 'app_id' => '638113826341564',
-  // 'app_secret' => 'abc123',
-  // 'default_graph_version' => 'v2.7',
-// ]);
-// $request = $fb->request('GET', $leadgen_id);
+$fb = new Facebook\Facebook([
+  'app_id' => '638113826341564',
+  'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
+  'default_graph_version' => 'v2.7',
+]);
+$request = $fb->request('GET', $leadgen_id);
 
-$fb = new Facebook\Facebook(/* . . . */);
+
+// $fb = new Facebook\Facebook(/* . . . */);
 $request = $fb->request('GET', $leadgen_id);
 print_r($request);
 // Send the request to Graph
