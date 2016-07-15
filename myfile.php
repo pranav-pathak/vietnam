@@ -20,11 +20,11 @@ $graphObject = $response->getGraphObject();
 /* handle the result */
 print_r($graphObject);
 
-$txt1 = $graphObject;
+// $txt1 = $graphObject;
 
- $handle = fopen($myfile, "a")
-  //fwrite($myfile, $txt);
-  fwrite($handle,$txt1);
-  fclose($myfile);
+ // $handle = fopen($myfile, "a")
+  // //fwrite($myfile, $txt);
+  // fwrite($handle,$txt1);
+  // fclose($myfile);
   
 ?>
