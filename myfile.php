@@ -28,7 +28,12 @@ $request = new FacebookRequest(
   'GET',
   '/638113826341564/'.$leadgen_id
 );
+echo"request";
+print_r($request);
 $response = $request->execute();
+
+echo "respose";
+print_r($response);
 $graphObject = $response->getGraphObject();
 /* handle the result */
 print_r($graphObject);
