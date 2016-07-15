@@ -1,52 +1,82 @@
 <?php
-echo "P1";
 session_start();
- 
-require_once( 'Facebook/FacebookSession.php' );
-require_once( 'Facebook/FacebookRedirectLoginHelper.php' );
-require_once( 'Facebook/FacebookRequest.php' );
-require_once( 'Facebook/FacebookResponse.php' );
-require_once( 'Facebook/FacebookSDKException.php' );
-require_once( 'Facebook/FacebookRequestException.php' );
-require_once( 'Facebook/FacebookAuthorizationException.php' );
-require_once( 'Facebook/GraphObject.php' );
- 
-use Facebook\FacebookSession;
-use Facebook\FacebookRedirectLoginHelper;
-use Facebook\FacebookRequest;
-use Facebook\FacebookResponse;
-use Facebook\FacebookSDKException;
-use Facebook\FacebookRequestException;
-use Facebook\FacebookAuthorizationException;
-use Facebook\GraphObject;
- 
-// init app with app id (APPID) and secret (SECRET)
-FacebookSession::setDefaultApplication('638113826341564','8f5d4971c70fe677c9c9b2c44e74aa9b');
- 
-// login helper with redirect_uri
-$helper = new FacebookRedirectLoginHelper( 'https://vietnam-test-server.herokuapp.com' );
- 
-try {
-  $session = $helper->getSessionFromRedirect();
-} catch( FacebookRequestException $ex ) {
-  // When Facebook returns an error
-} catch( Exception $ex ) {
-  // When validation fails or other local issues
-}
- 
-// see if we have a session
-if ( isset( $session ) ) {
-  // graph api request for user data
-  $request = new FacebookRequest( $session, 'GET', '/me' );
-  $response = $request->execute();
-  // get response
-  $graphObject = $response->getGraphObject();
-   
-  // print data
-  echo  print_r( $graphObject, 1 );
-} else {
-  // show login url
-  echo '<a href="' . $helper->getLoginUrl() . '">Login</a>';
-}
+require_once __DIR__ . '/src/Facebook/autoload.php';
 
+$fb = new Facebook\Facebook([
+  'app_id' => '638113826341564',
+  'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
+  'default_graph_version' => 'v2.5',
+  ]);
+
+$helper = $fb->getRedirectLoginHelper();
+
+$permissions = ['email']; // optional
+	
+try {
+	if (isset($_SESSION['facebook_access_token'])) {
+		$accessToken = $_SESSION['facebook_access_token'];
+	} else {
+  		$accessToken = $helper->getAccessToken();
+	}
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+ 	// When Graph returns an error
+ 	echo 'Graph returned an error: ' . $e->getMessage();
+
+  	exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+ 	// When validation fails or other local issues
+	echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  	exit;
+ }
+
+if (isset($accessToken)) {
+	if (isset($_SESSION['facebook_access_token'])) {
+		$fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+	} else {
+		// getting short-lived access token
+		$_SESSION['facebook_access_token'] = (string) $accessToken;
+
+	  	// OAuth 2.0 client handler
+		$oAuth2Client = $fb->getOAuth2Client();
+
+		// Exchanges a short-lived access token for a long-lived one
+		$longLivedAccessToken = $oAuth2Client->getLongLivedAccessToken($_SESSION['facebook_access_token']);
+
+		$_SESSION['facebook_access_token'] = (string) $longLivedAccessToken;
+
+		// setting default access token to be used in script
+		$fb->setDefaultAccessToken($_SESSION['facebook_access_token']);
+	}
+
+	// redirect the user back to the same page if it has "code" GET variable
+	if (isset($_GET['code'])) {
+		header('Location: ./');
+	}
+
+	// getting basic info about user
+	try {
+		$profile_request = $fb->get('/me?fields=name,first_name,last_name,email');
+		$profile = $profile_request->getGraphNode()->asArray();
+	} catch(Facebook\Exceptions\FacebookResponseException $e) {
+		// When Graph returns an error
+		echo 'Graph returned an error: ' . $e->getMessage();
+		session_destroy();
+		// redirecting user back to app login page
+		header("Location: ./");
+		exit;
+	} catch(Facebook\Exceptions\FacebookSDKException $e) {
+		// When validation fails or other local issues
+		echo 'Facebook SDK returned an error: ' . $e->getMessage();
+		exit;
+	}
+	
+	// printing $profile array on the screen which holds the basic info about user
+	print_r($profile);
+
+  	// Now you can redirect to another page and use the access token from $_SESSION['facebook_access_token']
+} else {
+	// replace your website URL same as added in the developers.facebook.com/apps e.g. if you used http instead of https and you used non-www version or www version of your website then you must add the same here
+	$loginUrl = $helper->getLoginUrl('https://vietnam-test-server.herokuapp.com', $permissions);
+	echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
+}
 ?>

@@ -11,6 +11,18 @@ require_once __DIR__ . '/Facebook/autoload.php';
 echo"required!";
 
 
+curl -G \
+  -d 'access_token=<ACCESS_TOKEN>' \
+  https://graph.facebook.com/v2.5/{$leadgen_id}
+  
+  
+
+
+// curl_exec($ch);
+// curl_close($ch);
+// fclose($fp);
+
+
 
 use FacebookAds\Object\Lead;
 
