@@ -7,10 +7,10 @@ echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
 fclose($myfile);
 
 
-use FacebookAds\Object\Lead;
+// use FacebookAds\Object\Lead;
 
-$form = new Lead('1043952978973660');
-$form->read();
+// $form = new Lead('1043952978973660');
+// $form->read();
 
 
 use FacebookAds\Api;
