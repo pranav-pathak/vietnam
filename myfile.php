@@ -11,7 +11,12 @@ fclose($myfile);
 
 // echo "facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php";
 
-// require_once __DIR__ . '/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
+require_once __DIR__ . '/facebook-php-sdk-v4-5.0.0/src/Facebook/autoload.php';
+use /facebook-php-sdk-v4-5.0.0/src/Facebook\FacebookSession;
+use /facebook-php-sdk-v4-5.0.0/src/Facebook\FacebookRequest;
+use /facebook-php-sdk-v4-5.0.0/src/Facebook\GraphUser;
+use /facebook-php-sdk-v4-5.0.0/src/Facebook\FacebookRequestException;
+use /facebook-php-sdk-v4-5.0.0/src/Facebook\FacebookRedirectLoginHelper;
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
