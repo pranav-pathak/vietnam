@@ -1,5 +1,5 @@
 <?php
-
+echo "P1";
 session_start();
  
 require_once( 'Facebook/FacebookSession.php' );
