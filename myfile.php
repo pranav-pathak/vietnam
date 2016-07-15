@@ -30,8 +30,23 @@ print_r($fb);
 
 // $fb = new Facebook\Facebook(/* . . . */);
 $request = $fb->request('GET', $leadgen_id);
+// Send the request to Graph
+try {
+  $response = $fb->getClient()->sendRequest($request);
+} catch(Facebook\Exceptions\FacebookResponseException $e) {
+  // When Graph returns an error
+  echo 'Graph returned an error: ' . $e->getMessage();
+  exit;
+} catch(Facebook\Exceptions\FacebookSDKException $e) {
+  // When validation fails or other local issues
+  echo 'Facebook SDK returned an error: ' . $e->getMessage();
+  exit;
+}
 
-print_r($request);
+$graphNode = $response->getGraphNode();
+
+echo 'User name: ' . $graphNode['name'];
+
 
 // include("/Facebook/autoload.php");
 /* PHP SDK v5.0.0 */
