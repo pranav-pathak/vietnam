@@ -2,12 +2,14 @@
 
 $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
-$myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
-echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
-fclose($myfile);
+// $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
+// echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
+// fclose($myfile);
 
+echo $leadgen_id = 1043685219000436;
 
-include("/Facebook/autoload.php");
+require_once __DIR__ . '/Facebook/autoload.php';
+// include("/Facebook/autoload.php");
 /* PHP SDK v5.0.0 */
 /* make the API call */
 $request = new FacebookRequest(
