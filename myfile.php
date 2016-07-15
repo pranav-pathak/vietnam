@@ -6,22 +6,15 @@ $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
 echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
 fclose($myfile);
 
-require_once __DIR__ . '/Facebook/autoload.php';
+require_once __DIR__ . '/src/Facebook/autoload.php';
+
+$fb = new Facebook\Facebook([
+  'app_id' => '638113826341564',
+  'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
+  'default_graph_version' => 'v2.5',
+  ]);
  
 echo"required!";
-
-
-curl -G \
-  -d 'access_token=<ACCESS_TOKEN>' \
-  https://graph.facebook.com/v2.5/{$leadgen_id}
-  
-  
-
-
-// curl_exec($ch);
-// curl_close($ch);
-// fclose($fp);
-
 
 
 use FacebookAds\Object\Lead;
