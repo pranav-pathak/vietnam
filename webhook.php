@@ -28,7 +28,7 @@ $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
 // header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
 
 
-include(/Facebook/autoload.php);
+// include(/Facebook/autoload.php);
 
 
 /* PHP SDK v5.0.0 */
