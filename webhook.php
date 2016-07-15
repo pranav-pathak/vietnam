@@ -21,33 +21,35 @@
   //fwrite($myfile, $txt);
   fwrite($handle,$txt);
   fclose($myfile);
-  
+  $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
+  $handle = fopen("leadgen.txt", "w+");
+  fwrite($handle,$leadgen_id);
+  fclose($myfile);  
 
   
-$leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
 // header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
 
 
-// include(/Facebook/autoload.php);
+// // include(/Facebook/autoload.php);
 
 
-/* PHP SDK v5.0.0 */
-/* make the API call */
-$request = new FacebookRequest(
-  $session,
-  'GET',
-  '/638113826341564/'.$leadgen_id
-);
-$response = $request->execute();
-$graphObject = $response->getGraphObject();
-/* handle the result */
+// /* PHP SDK v5.0.0 */
+// /* make the API call */
+// $request = new FacebookRequest(
+  // $session,
+  // 'GET',
+  // '/638113826341564/'.$leadgen_id
+// );
+// $response = $request->execute();
+// $graphObject = $response->getGraphObject();
+// /* handle the result */
 
-$txt1 = print_r($graphObject, true);
+// $txt1 = print_r($graphObject, true);
 
- $handle = fopen($myfile, "a")
-  //fwrite($myfile, $txt);
-  fwrite($handle,$txt1);
-  fclose($myfile);
+ // $handle = fopen($myfile, "a")
+  // //fwrite($myfile, $txt);
+  // fwrite($handle,$txt1);
+  // fclose($myfile);
   
 
  ?>
