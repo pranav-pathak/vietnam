@@ -12,6 +12,11 @@ use FacebookAds\Object\Lead;
 $form = new Lead('1043952978973660');
 $form->read();
 
+
+use FacebookAds\Api;
+
+$accounts = Api::instance()->call('/me/accounts');
+
 // $fb = new Facebook\Facebook([
   // 'app_id' => '638113826341564',
   // 'app_secret' => '8f5d4971c70fe677c9c9b2c44e74aa9b',
