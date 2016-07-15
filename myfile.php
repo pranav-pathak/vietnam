@@ -25,9 +25,11 @@ $fb = new Facebook\Facebook([
 
 print_r($fb);
 
-$fbApp = new Facebook\FacebookApp('638113826341564', $leadgen_id);
-$request = new Facebook\FacebookRequest($fbApp, 'abc123', 'GET', $leadgen_id);
+// $fbApp = new Facebook\FacebookApp('638113826341564', $leadgen_id);
+// $request = new Facebook\FacebookRequest($fbApp, 'abc123', 'GET', $leadgen_id);
 
+// $fb = new Facebook\Facebook(/* . . . */);
+$request = $fb->request('GET', $leadgen_id);
 
 print_r($request);
 
