@@ -8,8 +8,6 @@ $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
 echo $leadgen_id = 1043685219000436;
 
-GET /v2.7/638113826341564/1043685219000436 HTTP/1.1
-Host: graph.facebook.com
 
 
 
@@ -35,3 +33,5 @@ print_r($graphObject);
   // fclose($myfile);
   
 ?>
+GET /v2.7/638113826341564/1043685219000436 HTTP/1.1
+Host: graph.facebook.com
