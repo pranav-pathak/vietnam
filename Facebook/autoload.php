@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright 2016 Facebook, Inc.
+ * Copyright 2014 Facebook, Inc.
  *
  * You are hereby granted a non-exclusive, worldwide, royalty-free license to
  * use, copy, modify, and distribute this software in source code or binary
@@ -27,7 +27,6 @@
  * Why are you not using composer?
  * https://getcomposer.org/
  */
-
 if (version_compare(PHP_VERSION, '5.4.0', '<')) {
     throw new Exception('The Facebook SDK requires PHP version 5.4 or higher.');
 }
