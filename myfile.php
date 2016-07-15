@@ -10,6 +10,15 @@ require_once __DIR__ . '/Facebook/autoload.php';
  
 echo"required!";
 
+use FacebookAds\Api;
+
+$accounts = Api::instance()->call('/me/accounts');
+
+
+echo "accounts";
+print_r($account);
+
+echo "Lead";
 use FacebookAds\Object\Lead;
 
 $form = new Lead($leadgen_id);
