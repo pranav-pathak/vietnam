@@ -20,7 +20,7 @@ echo"required!";
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
   'app_secret' => 'abc123',
-  'default_graph_version' => 'v2.5',
+  'default_graph_version' => 'v2.7',
 ]);
 
 print_r($fb);
