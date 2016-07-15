@@ -25,25 +25,31 @@ $fb = new Facebook\Facebook([
 
 print_r($fb);
 
+$fbApp = new Facebook\FacebookApp('638113826341564', $leadgen_id);
+$request = new Facebook\FacebookRequest($fbApp, 'abc123', 'GET', $leadgen_id);
+
+
+print_r($request);
+
 // include("/Facebook/autoload.php");
 /* PHP SDK v5.0.0 */
 /* make the API call */
-$request = new FacebookRequest(
-  $session,
-  'GET',
-  '/638113826341564/'.$leadgen_id
-);
-echo"request";
-print_r($request);
-$response = $request->execute();
+// $request = new FacebookRequest(
+  // $session,
+  // 'GET',
+  // '/638113826341564/'.$leadgen_id
+// );
+// echo"request";
+// print_r($request);
+// $response = $request->execute();
 
-echo "respose";
-print_r($response);
-$graphObject = $response->getGraphObject();
-/* handle the result */
-print_r($graphObject);
+// echo "respose";
+// print_r($response);
+// $graphObject = $response->getGraphObject();
+// /* handle the result */
+// print_r($graphObject);
 
-echo "PPPPPPPPP!!!!";
+// echo "PPPPPPPPP!!!!";
 ?>
 
 GET /v2.7/638113826341564/1043743585661266 HTTP/1.1
