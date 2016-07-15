@@ -1,10 +1,10 @@
 <?php
 
-$myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
+// $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
-$myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
-echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
-fclose($myfile);
+// $myfile = fopen("leadgen.txt", "r") or die("Unable to open file!");
+// echo $leadgen_id =  fread($myfile,filesize("leadgen.txt"));
+// fclose($myfile);
 
 $fb = new Facebook\Facebook([
   'app_id' => '638113826341564',
@@ -15,7 +15,7 @@ $response = $fb->get('/me');
 
 use FacebookAds\Object\Lead;
 
-$form = new Lead($leadgen_id);
+$form = new Lead('1043973408971617');
 $form->read();
 
 
