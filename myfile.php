@@ -45,6 +45,7 @@ try {
 
 $graphNode = $response->getGraphNode();
 
+print_r($response);
 echo 'User name: ' . $graphNode['name'];
 
 
