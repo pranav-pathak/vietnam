@@ -1,6 +1,6 @@
 <?php
-require_once( '/vendor/autoload.php' );
-
+// require_once( '/vendor/autoload.php' );
+require_once __DIR__ . '/vendor/autoload.php';
 
 $myfile = fopen("newfile1.txt", "w+") or die("Unable to open file!");
 
