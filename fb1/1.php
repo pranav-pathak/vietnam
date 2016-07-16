@@ -1,5 +1,8 @@
 <?php
 
+
+require_once __DIR__ . '/vendor/autoload.php';
+
 use FacebookAds\Api;
 
 // Initialize a new Session and instanciate an Api object
