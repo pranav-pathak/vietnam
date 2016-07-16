@@ -23,7 +23,7 @@ fclose($myfile);
 // print_r($api);
 // echo "<br/>";
 
-use FacebookAds\Object\Lead;
+use Facebook\Object\Lead;
 
 $form = new Lead($leadgen_id);
 $form->read();
