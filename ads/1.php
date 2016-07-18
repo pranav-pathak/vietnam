@@ -8,16 +8,16 @@ require __DIR__ . '/src/FacebookAds/Cursor.php';
 require __DIR__ . '/src/FacebookAds/Session.php';
 require __DIR__ . '/src/FacebookAds/TypeChecker.php';
 
-namespace FacebookAds;
 
-use FacebookAds\Api;
-use FacebookAds\Http\Adapter\CurlAdapter;
-use FacebookAds\Http\Client;
-use FacebookAds\Http\Exception\RequestException;
-use FacebookAds\Logger\CurlLogger;
-use FacebookAds\Logger\LoggerInterface;
-use FacebookAds\Logger\NullLogger;
-use FacebookAds\Session;
+// namespace FacebookAds;
+// use FacebookAds\Api;
+// use FacebookAds\Http\Adapter\CurlAdapter;
+// use FacebookAds\Http\Client;
+// use FacebookAds\Http\Exception\RequestException;
+// use FacebookAds\Logger\CurlLogger;
+// use FacebookAds\Logger\LoggerInterface;
+// use FacebookAds\Logger\NullLogger;
+// use FacebookAds\Session;
 // use FacebookAdsTest\Exception\PHPUnitRequestExceptionWrapper;
 
 
