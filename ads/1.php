@@ -1,5 +1,13 @@
 <?php
 
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/src/FacebookAds/Api.php';
+require __DIR__ . '/src/FacebookAds/ApiConfig.php';
+require __DIR__ . '/src/FacebookAds/ApiRequest.php';
+require __DIR__ . '/src/FacebookAds/Cursor.php';
+require __DIR__ . '/src/FacebookAds/Session.php';
+require __DIR__ . '/src/FacebookAds/TypeChecker.php';
+
 namespace FacebookAds;
 
 use FacebookAds\Api;
