@@ -16,7 +16,7 @@
 $app_id ='638113826341564';
 $app_secret='8f5d4971c70fe677c9c9b2c44e74aa9b'; 
 // $access_token='638113826341564|JwPbpCKEGQpo4Mt8t47LlbpihzA';
-$access_token ='EAAJEXHPyArwBALPTluKXmsO1wHE2HQsWQT9r5nZBfk4XRUfYA3PQ3tKdnipPcfotwZCYfT99chIcyYoQNg66XzVta9NZAKuK2nfndiszGGk9NIW28X1PZBJJZB9wX2ZCrpiZCM3Uno5DNiqzx0tUnmMHz64mnDFZBnIZD';
+$access_token ='EAAJEXHPyArwBAC04RjQrBxeJJj3GJi0kRZBYX1RS2lBNcVwg5yTxHUxTFlPB8LHeAHV6Tk5zVqGPD1hVyiNQWG87ntIboY8IFWxWZBBklyr0VEhXmgjwiOjCaOoTjl4msLtw12pFgmoaAZA4VMHsrJTolISd9oZD';
   
 $data = getLead($leadgen_id, $access_token);
 fwrite($myfile,'\n lead_data : '. print_r($data, true));
