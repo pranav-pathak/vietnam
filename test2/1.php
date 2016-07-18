@@ -11,7 +11,7 @@ include('vendor/src/FacebookAds/Cursor.php');
 include('vendor/src/FacebookAds/Session.php');
 include('vendor/src/FacebookAds/TypeChecker.php');
 
-
+echo "1 \n";
 
 $app_id = '638113826341564';
 $app_secret = '8f5d4971c70fe677c9c9b2c44e74aa9b';
@@ -23,15 +23,16 @@ Api::init($app_id, $app_secret, $access_token);
 // The Api object is now available trough singleton
 $api = Api::instance();
 
-// echo"api";
+echo"api -- 2 \n";
 // print_r($api);
-// echo "<br/>";
+echo "<br/>";
 
 use FacebookAds\Object\Lead;
 
 $form = new Lead('1045432815492343');
 $form->read();
 
+echo"api -- 3\n"; 
 print_r($form);
 
 // $request = new FacebookRequest(
