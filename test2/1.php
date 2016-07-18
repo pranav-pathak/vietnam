@@ -34,13 +34,13 @@ $form->read();
 print_r($form);
 echo"api -- 2.5 \n";
 
-use FacebookAds\Object\Lead;
+// use FacebookAds\Object\Lead;
 
-$form = new Lead('1045432815492343');
-$form->read();
+// $form = new Lead('1045432815492343');
+// $form->read();
 
-echo"api -- 3\n"; 
-print_r($form);
+// echo"api -- 3\n"; 
+// print_r($form);
 
 // $request = new FacebookRequest(
   // $session,
@@ -50,7 +50,7 @@ print_r($form);
 // $response = $request->execute();
 // $graphObject = $response->getGraphObject();
 
-echo "$graphObject";
+// echo "$graphObject";
 // print_r($graphObject);
 
 ?>
