@@ -3,7 +3,7 @@
 use FacebookAds\Api;
 
 
-include('/vendor/autoload.php');
+include('vendor/autoload.php');
 require __DIR__ . '/src/FacebookAds/Api.php';
 require __DIR__ . '/src/FacebookAds/ApiConfig.php';
 require __DIR__ . '/src/FacebookAds/ApiRequest.php';
