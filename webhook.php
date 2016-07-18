@@ -1,55 +1,39 @@
 <?php
 
-  $myfile = fopen("newfile.txt", "w+") or die("Unable to open file!");
+  $myfile = fopen("log.txt", "w+") or die("Unable to open file!");
   $name = time();
  fwrite($myfile, '\n recive -'.time());
  $challenge = $_REQUEST['hub_challenge'];
  $verify_token = $_REQUEST['hub_verify_token'];
  if ($verify_token == 'abc123') {echo $challenge;}
-
- //you can output the below to your error log and tail -f it to see them
- //feed in live, once you see them hit your error log you know your
- //listener works, then you can change the below code to handle the
- //array and grab the leadgen ID for a further GET request of that real-time entry;
-
   $input = json_decode(file_get_contents('php://input'), true);
-  error_log(print_r($input, true));
-  
- 
-  $txt = print_r($input, true);
-  // $handle = fopen($myfile, "a");
-  fwrite($myfile, $txt);
-  // fwrite($handle,$txt);
-  fclose($myfile);
+  error_log(print_r('\nerror data log:'.$input, true)); 
   $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
-  $handle = fopen("leadgen.txt", "w+");
-  fwrite($handle,$leadgen_id);
+
+  fwrite($myfile,'\n lead_id: '$leadgen_id);
+$data = getLead($leadgen_id,'EAAJEXHPyArwBADzR1CGAsG44RBGVNPESFg2t90ZBOuJzQCgSn6YY1i3Q8H4MCZA8Ie8FJwkTQo0jb9h1F7ICoGzhk332JTl9cfjGQyOE35UIr7rDN12lwrdhPrrhwZCZAdBBxucFMlrf8TZApqSgHXAQoGhrAS08ZBnmZA4sKbXFwZDZD');
+fwrite($myfile,'\n lead_data : '$data)
   fclose($myfile);  
 
-  
-// header("Location:http://vietnam.test4.meadjohnson.net/fb_lead_ads?leadgen_id={$leadgen_id}"); 
 
+function getLead($leadgen_id,$user_access_token) {
+    //fetch lead info from FB API
+    $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $graph_url);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    $output = curl_exec($ch); 
+    curl_close($ch);
 
-// // include(/Facebook/autoload.php);
-
-
-// /* PHP SDK v5.0.0 */
-// /* make the API call */
-// $request = new FacebookRequest(
-  // $session,
-  // 'GET',
-  // '/638113826341564/'.$leadgen_id
-// );
-// $response = $request->execute();
-// $graphObject = $response->getGraphObject();
-// /* handle the result */
-
-// $txt1 = print_r($graphObject, true);
-
- // $handle = fopen($myfile, "a")
-  // //fwrite($myfile, $txt);
-  // fwrite($handle,$txt1);
-  // fclose($myfile);
-  
+    //work with the lead data
+    $leaddata = json_decode($output);
+    $lead = [];
+    for($i=0;$i<count($leaddata->field_data);$i++) {
+        $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
+    }
+    return $lead;
+} 
 
  ?>
