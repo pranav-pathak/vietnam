@@ -20,7 +20,6 @@ $access_token ='EAAJEXHPyArwBAJ0xlFiuZAQZAbRtJM1spZCthD0FTQq0sA2jQwemyJ3zkI88uyh
   
 $data = getLead($leadgen_id, $access_token);
 fwrite($myfile,'\n lead_data : '. print_r($data, true));
-  fclose($myfile);  
 
 
 // $lead_str = '[{"full_name": "<test lead: dummy data for full_name>",	"email": "test@fb.com",	"street_address": "<test lead: dummy data for street_address>",	"city": "<test lead: dummy data for city>",	"phone_number": "<test lead: dummy data for phone_number>"}]';
@@ -41,7 +40,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 );                                                                                                                   
                                                                                                                      
 $result = curl_exec($ch);
-print $result;
+fwrite($myfile, print_r($result, true));
+fclose($myfile);  
 
 function getLead($leadgen_id,$user_access_token) {
     //fetch lead info from FB API
