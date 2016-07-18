@@ -11,7 +11,14 @@
   $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
 
   fwrite($myfile,'\n lead_id:'. $leadgen_id);
-$data = getLead($leadgen_id,'EAAJEXHPyArwBADzR1CGAsG44RBGVNPESFg2t90ZBOuJzQCgSn6YY1i3Q8H4MCZA8Ie8FJwkTQo0jb9h1F7ICoGzhk332JTl9cfjGQyOE35UIr7rDN12lwrdhPrrhwZCZAdBBxucFMlrf8TZApqSgHXAQoGhrAS08ZBnmZA4sKbXFwZDZD');
+  
+  
+$app_id ='638113826341564';
+$app_secret='8f5d4971c70fe677c9c9b2c44e74aa9b'; 
+// $access_token='638113826341564|JwPbpCKEGQpo4Mt8t47LlbpihzA';
+$access_token ='EAAJEXHPyArwBALPTluKXmsO1wHE2HQsWQT9r5nZBfk4XRUfYA3PQ3tKdnipPcfotwZCYfT99chIcyYoQNg66XzVta9NZAKuK2nfndiszGGk9NIW28X1PZBJJZB9wX2ZCrpiZCM3Uno5DNiqzx0tUnmMHz64mnDFZBnIZD';
+  
+$data = getLead($leadgen_id, $access_token);
 fwrite($myfile,'\n lead_data : '. print_r($data, true));
   fclose($myfile);  
 
