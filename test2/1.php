@@ -4,12 +4,12 @@ use FacebookAds\Api;
 
 
 include('vendor/autoload.php');
-require __DIR__ . '/src/FacebookAds/Api.php';
-require __DIR__ . '/src/FacebookAds/ApiConfig.php';
-require __DIR__ . '/src/FacebookAds/ApiRequest.php';
-require __DIR__ . '/src/FacebookAds/Cursor.php';
-require __DIR__ . '/src/FacebookAds/Session.php';
-require __DIR__ . '/src/FacebookAds/TypeChecker.php';
+include('vendor/src/FacebookAds/Api.php';
+include('vendor/src/FacebookAds/ApiConfig.php';
+include('vendor/src/FacebookAds/ApiRequest.php';
+include('vendor/src/FacebookAds/Cursor.php';
+include('vendor/src/FacebookAds/Session.php';
+include('vendor/src/FacebookAds/TypeChecker.php';
 
 
 $app_id = '638113826341564';
