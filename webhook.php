@@ -45,7 +45,10 @@ fclose($myfile);
 
 function getLead($leadgen_id,$user_access_token) {
     //fetch lead info from FB API
-    $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
+    // $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
+    $graph_url= 'https://graph.facebook.com/endpoint?leadgen_id='.$leadgen_id.';access_token=638113826341564|8f5d4971c70fe677c9c9b2c44e74aa9b';
+    
+    
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $graph_url);
     curl_setopt($ch, CURLOPT_HEADER, 0);
