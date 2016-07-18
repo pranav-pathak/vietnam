@@ -23,8 +23,19 @@ Api::init($app_id, $app_secret, $access_token);
 // The Api object is now available trough singleton
 $api = Api::instance();
 
-echo"api";
-print_r($api);
-echo "<br/>";
+// echo"api";
+// print_r($api);
+// echo "<br/>";
+
+$request = new FacebookRequest(
+  $session,
+  'GET',
+  '/638113826341564/1045432815492343'
+);
+$response = $request->execute();
+$graphObject = $response->getGraphObject();
+
+echo "$graphObject";
+print_r($graphObject);
 
 ?>
