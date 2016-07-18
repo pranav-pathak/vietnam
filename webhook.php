@@ -27,13 +27,13 @@ function getLead($leadgen_id,$user_access_token) {
     $output = curl_exec($ch); 
     curl_close($ch);
 
-    //work with the lead data
-    $leaddata = json_decode($output);
-    $lead = [];
-    for($i=0;$i<count($leaddata->field_data);$i++) {
-        $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
-    }
-    return $lead;
+    // //work with the lead data
+    // $leaddata = json_decode($output);
+    // $lead = [];
+    // for($i=0;$i<count($leaddata->field_data);$i++) {
+        // $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
+    // }
+    return $output;
 } 
 
  ?>
