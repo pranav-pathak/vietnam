@@ -25,7 +25,14 @@ $api = Api::instance();
 
 echo"api -- 2 \n";
 // print_r($api);
-echo "<br/>";
+echo "<br/>"; 
+
+use FacebookAds\Object\LeadgenForm;
+
+$form = new LeadgenForm('1042356555799969');
+$form->read();
+print_r($form);
+echo"api -- 2.5 \n";
 
 use FacebookAds\Object\Lead;
 
