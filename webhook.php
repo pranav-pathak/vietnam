@@ -16,7 +16,10 @@
 $app_id ='638113826341564';
 $app_secret='8f5d4971c70fe677c9c9b2c44e74aa9b'; 
 // $access_token='638113826341564|JwPbpCKEGQpo4Mt8t47LlbpihzA';
-$access_token ='EAAJEXHPyArwBAJ0xlFiuZAQZAbRtJM1spZCthD0FTQq0sA2jQwemyJ3zkI88uyhzZAFfvg9vk5VbWg0IGOCRyoltCIQEXcd9cQ7DeFa2ZAKrYCNuZCZAhZC5UZA6gj2L4IsILCkphIIGCxT8sDNVXs85mp9BQhaHjBgnMQUsgVCzfewZDZD';
+$access_token ='EAAJEXHPyArwBAPlUz0JiQL2da5Fz6roaVT8mtASOTF4Bi14p30kWzEqcVNac2Pa2J5bSJKfyyERHo67PZASD6D4IUxrWeEERLkGgrDsln48V7ZB4gDDsYrXR8hPVtTkoVLcdS19j2sQj1DvIhaB6Xv6bqworsZD';
+  
+ //for user access token goto https://developers.facebook.com/tools/accesstoken/ and click on user access token for your apropriate app section and then in next page clcik on Extend access token, bottom (https://developers.facebook.com/tools/debug/accesstoken?q=EAAJEXHPyArwBACs0kLDEanSLALLk3jGTPhm497VZC81mR6chMTkZCG2RDWilK0s1RLssZCdz2bPy1xbMmJED87ZCjmxxqcHKUZA5UTbMTZBSm0VVN9YC9teaIypyc8pAThGOsP5XHvAAP0ZCLpj2ZBDxdCZCnSzF4lFrl3lztzr9uUAZDZD)
+ 
   
 $data = getLead($leadgen_id, $access_token);
 fwrite($myfile,'\n lead_data : '. print_r($data, true));
@@ -45,9 +48,8 @@ fclose($myfile);
 
 function getLead($leadgen_id,$user_access_token) {
     //fetch lead info from FB API
-    // $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
-    $graph_url= 'https://graph.facebook.com/endpoint?leadgen_id='.$leadgen_id.';access_token=638113826341564|8f5d4971c70fe677c9c9b2c44e74aa9b';
-    
+    $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
+  
     
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $graph_url);
