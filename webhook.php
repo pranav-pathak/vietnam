@@ -12,7 +12,7 @@
 
   fwrite($myfile,'\n lead_id:'. $leadgen_id);
 $data = getLead($leadgen_id,'EAAJEXHPyArwBADzR1CGAsG44RBGVNPESFg2t90ZBOuJzQCgSn6YY1i3Q8H4MCZA8Ie8FJwkTQo0jb9h1F7ICoGzhk332JTl9cfjGQyOE35UIr7rDN12lwrdhPrrhwZCZAdBBxucFMlrf8TZApqSgHXAQoGhrAS08ZBnmZA4sKbXFwZDZD');
-fwrite($myfile,'\n lead_data : '$data);
+fwrite($myfile,'\n lead_data : '.$data);
   fclose($myfile);  
 
 
