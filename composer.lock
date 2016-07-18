@@ -4,65 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6b3983eddbb12e6cc4aa226d85fd8d78",
-    "content-hash": "a63b2f4e5930112dcdcd95fb7636109e",
+    "hash": "a0e4d9f9f95d62a1c4d5dfbaa9b9e8fa",
+    "content-hash": "12bd49b8cbb702b6029b86b569dbff6b",
     "packages": [
         {
-            "name": "facebook/php-sdk-v4",
-            "version": "5.2.0",
+            "name": "facebook/php-ads-sdk",
+            "version": "2.5.2",
             "source": {
                 "type": "git",
-                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
-                "reference": "c60fba1fe1de62db1e0776d32fc2fb778189459c"
+                "url": "https://github.com/facebook/facebook-php-ads-sdk.git",
+                "reference": "406826df6249c466fb352228413ba99d6e65178c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/c60fba1fe1de62db1e0776d32fc2fb778189459c",
-                "reference": "c60fba1fe1de62db1e0776d32fc2fb778189459c",
+                "url": "https://api.github.com/repos/facebook/facebook-php-ads-sdk/zipball/406826df6249c466fb352228413ba99d6e65178c",
+                "reference": "406826df6249c466fb352228413ba99d6e65178c",
                 "shasum": ""
             },
-            "require": {
-                "php": "^5.4|^7.0"
-            },
             "require-dev": {
-                "guzzlehttp/guzzle": "~5.0",
-                "mockery/mockery": "~0.8",
-                "phpunit/phpunit": "~4.0"
-            },
-            "suggest": {
-                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+                "phpunit/phpunit": ">=4.0.0",
+                "symfony/finder": "~2.6"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "Facebook\\": "src/Facebook/"
-                },
-                "files": [
-                    "src/Facebook/polyfills.php"
-                ]
+                    "FacebookAds\\": "src/FacebookAds/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "Facebook Platform"
             ],
-            "authors": [
-                {
-                    "name": "Facebook",
-                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
-                }
-            ],
-            "description": "Facebook SDK for PHP",
-            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "description": "PHP SDK for Facebook ads",
+            "homepage": "https://developers.facebook.com/",
             "keywords": [
+                "ads",
                 "facebook",
                 "sdk"
             ],
-            "time": "2016-05-18 22:04:36"
+            "time": "2016-04-07 14:51:52"
         }
     ],
     "packages-dev": [],
@@ -71,6 +51,8 @@
     "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "ext-mbstring": "*"
+    },
     "platform-dev": []
 }
