@@ -55,9 +55,35 @@
 
 <?php
 
+function getLead($leadgen_id,$user_access_token) {
+    //fetch lead info from FB API
+    $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $graph_url);
+    curl_setopt($ch, CURLOPT_HEADER, 0);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+    $output = curl_exec($ch); 
+    curl_close($ch);
+
+    //work with the lead data
+    $leaddata = json_decode($output);
+    $lead = [];
+    for($i=0;$i<count($leaddata->field_data);$i++) {
+        $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
+    }
+    return $lead;
+}
+
+$data = getLead('1045432815492343','EAAJEXHPyArwBADzR1CGAsG44RBGVNPESFg2t90ZBOuJzQCgSn6YY1i3Q8H4MCZA8Ie8FJwkTQo0jb9h1F7ICoGzhk332JTl9cfjGQyOE35UIr7rDN12lwrdhPrrhwZCZAdBBxucFMlrf8TZApqSgHXAQoGhrAS08ZBnmZA4sKbXFwZDZD');
+
+print_r($data);
+die("hi");
+
+
 $ch = curl_init(); 
 
-$url = "https://graph.facebook.com/2.7/429300583784286/leadgen_whitelisted_users";
+$url = "https://graph.facebook.com/v2.7/429300583784286/leadgen_whitelisted_users";
 
 curl_setopt($ch,CURLOPT_URL,$url);
 curl_setopt($ch,CURLOPT_POST,1);
