@@ -1,6 +1,5 @@
 <?php
 
-/*
   $myfile = fopen("log.txt", "w+") or die("Unable to open file!");
   $name = time();
  fwrite($myfile, '\n recive -'.time());
@@ -22,12 +21,12 @@ $access_token ='EAAJEXHPyArwBAJ0xlFiuZAQZAbRtJM1spZCthD0FTQq0sA2jQwemyJ3zkI88uyh
 $data = getLead($leadgen_id, $access_token);
 fwrite($myfile,'\n lead_data : '. print_r($data, true));
   fclose($myfile);  
-*/
 
-$lead_str = '[{"full_name": "<test lead: dummy data for full_name>",	"email": "test@fb.com",	"street_address": "<test lead: dummy data for street_address>",	"city": "<test lead: dummy data for city>",	"phone_number": "<test lead: dummy data for phone_number>"}]';
-$json_arr = json_decode($lead_str);
-//print_r($json_obj[0]);
-$json_obj = json_encode($json_arr[0]);
+
+// $lead_str = '[{"full_name": "<test lead: dummy data for full_name>",	"email": "test@fb.com",	"street_address": "<test lead: dummy data for street_address>",	"city": "<test lead: dummy data for city>",	"phone_number": "<test lead: dummy data for phone_number>"}]';
+// $json_arr = json_decode($lead_str);
+// //print_r($json_obj[0]);
+$json_obj = json_encode($data);
 
 
 //$ch = curl_init('http://global.enfa.local/wh_post.php');
@@ -55,13 +54,13 @@ function getLead($leadgen_id,$user_access_token) {
     $output = curl_exec($ch); 
     curl_close($ch);
 
-    // //work with the lead data
-    // $leaddata = json_decode($output);
-    // $lead = [];
-    // for($i=0;$i<count($leaddata->field_data);$i++) {
-        // $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
-    // }
-    return $output;
+    //work with the lead data
+    $leaddata = json_decode($output);
+    $lead = [];
+    for($i=0;$i<count($leaddata->field_data);$i++) {
+        $lead[$leaddata->field_data[$i]->name]=$leaddata->field_data[$i]->values[0];
+    }
+    return $lead;
 } 
 
  ?>
