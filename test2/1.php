@@ -27,15 +27,22 @@ $api = Api::instance();
 // print_r($api);
 // echo "<br/>";
 
-$request = new FacebookRequest(
-  $session,
-  'GET',
-  '/638113826341564/1045432815492343'
-);
-$response = $request->execute();
-$graphObject = $response->getGraphObject();
+use FacebookAds\Object\Lead;
+
+$form = new Lead('1045432815492343');
+$form->read();
+
+print_r($form);
+
+// $request = new FacebookRequest(
+  // $session,
+  // 'GET',
+  // '/638113826341564/1045432815492343'
+// );
+// $response = $request->execute();
+// $graphObject = $response->getGraphObject();
 
 echo "$graphObject";
-print_r($graphObject);
+// print_r($graphObject);
 
 ?>
