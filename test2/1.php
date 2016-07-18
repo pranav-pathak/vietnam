@@ -54,6 +54,24 @@
 <ul id="list"></ul>
 <?php
 
+$ch = curl_init(); 
+
+$url = "https://graph.facebook.com/2.7/429300583784286/leadgen_whitelisted_users";
+curl_setopt($ch,CURLOPT_URL, $url);
+curl_setopt($ch,CURLOPT_POST,1);
+
+curl_setopt($ch,CURLOPT_POSTFIELDS, 'user_id=100006093332375');   
+
+        // $output contains the output string 
+        $output = curl_exec($ch); 
+
+        // close curl resource to free up system resources 
+        curl_close($ch);      
+        
+ 
+
+
+
 use FacebookAds\Api;
 
 
