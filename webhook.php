@@ -9,8 +9,8 @@
   $input = json_decode(file_get_contents('php://input'), true);
   error_log(print_r('\nerror data log:'.$input, true)); 
   $leadgen_id = $input['entry'][0]['changes'][0]['value']['leadgen_id'] ;
-
-  fwrite($myfile,'\n lead_id:'. $leadgen_id);
+  $lead_form_id = $input['entry'][0]['changes'][0]['value']['form_id'];
+  fwrite($myfile,'\n lead_id:'. $leadgen_id .'\n form_id '. $lead_form_id );
   
   
 $app_id ='638113826341564';
