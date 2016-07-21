@@ -23,8 +23,6 @@ $access_token ='EAAJEXHPyArwBAPlUz0JiQL2da5Fz6roaVT8mtASOTF4Bi14p30kWzEqcVNac2Pa
 if($input['entry'][0]['changes'][0]['value']['form_id'] == "1042356555799969"){
   $data = getLead($leadgen_id, $access_token);
   fwrite($myfile,'\n lead_data : '. print_r($data, true));
-}
-
 
 // $lead_str = '[{"full_name": "<test lead: dummy data for full_name>",	"email": "test@fb.com",	"street_address": "<test lead: dummy data for street_address>",	"city": "<test lead: dummy data for city>",	"phone_number": "<test lead: dummy data for phone_number>"}]';
 // $json_arr = json_decode($lead_str);
@@ -46,7 +44,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $result = curl_exec($ch);
 fwrite($myfile, print_r($result, true));
 fclose($myfile);  
-
+}
 function getLead($leadgen_id,$user_access_token) {
     //fetch lead info from FB API
     $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$user_access_token;
