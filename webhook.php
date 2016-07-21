@@ -20,7 +20,7 @@ $access_token ='EAAJEXHPyArwBAPlUz0JiQL2da5Fz6roaVT8mtASOTF4Bi14p30kWzEqcVNac2Pa
   
  //for user access token goto https://developers.facebook.com/tools/accesstoken/ and click on user access token for your apropriate app section and then in next page clcik on Extend access token, bottom (https://developers.facebook.com/tools/debug/accesstoken?q=EAAJEXHPyArwBACs0kLDEanSLALLk3jGTPhm497VZC81mR6chMTkZCG2RDWilK0s1RLssZCdz2bPy1xbMmJED87ZCjmxxqcHKUZA5UTbMTZBSm0VVN9YC9teaIypyc8pAThGOsP5XHvAAP0ZCLpj2ZBDxdCZCnSzF4lFrl3lztzr9uUAZDZD)
  
-if($input['entry'][0]['changes'][0]['value']['form_id'] == "1042356555799969"){
+if($input['entry'][0]['changes'][0]['value']['form_id'] == "1042674762487296"){
   $data = getLead($leadgen_id, $access_token);
   fwrite($myfile,'\n lead_data : '. print_r($data, true));
 
