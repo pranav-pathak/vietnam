@@ -30,16 +30,16 @@ if($input['entry'][0]['changes'][0]['value']['form_id'] == "1042674762487296"){
 $json_obj = json_encode($data);
 
 
-//$ch = curl_init('http://global.enfa.local/wh_post.php');
-// $ch = curl_init('http://vietnam.test4.meadjohnson.net/webhook/facebook_lead_ads?t='.time());                                                                      
-// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
-// curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
-// curl_setopt($ch, CURLOPT_HEADER, 0);                                                                
-// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                                                                      
-// curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
-    // 'Content-Type: application/json',                                                                                
-    // 'Content-Length: ' . strlen($json_obj))                                                                       
-// );                                                                                                                   
+$ch = curl_init('http://global.enfa.local/wh_post.php');
+$ch = curl_init('http://vietnam.test4.meadjohnson.net/webhook/facebook_lead_ads?t='.time());                                                                      
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
+curl_setopt($ch, CURLOPT_HEADER, 0);                                                                
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                                                                      
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+    'Content-Type: application/json',                                                                                
+    'Content-Length: ' . strlen($json_obj))                                                                       
+);                                                                                                                   
 $ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook_lead_ads?t='.time());                                                                      
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
