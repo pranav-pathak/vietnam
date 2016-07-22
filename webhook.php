@@ -39,7 +39,13 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
     'Content-Type: application/json',                                                                                
     'Content-Length: ' . strlen($json_obj))                                                                       
-);                                                                                                                   
+);
+
+$result = curl_exec($ch);
+fwrite($myfile, print_r($result, true));
+fwrite($myfile, "------------------------------");
+ 
+                                                                                                                   
 $ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook_lead_ads?t='.time());                                                                      
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
