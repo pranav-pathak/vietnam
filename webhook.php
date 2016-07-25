@@ -52,6 +52,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
                                                                                                                      
 $result = curl_exec($ch);
 fwrite($myfile, print_r($result, true));
+fwrite($myfile, "$$$$$ for test2 server ");
+
 fclose($myfile);  
 }
 function getLead($leadgen_id,$user_access_token) {
