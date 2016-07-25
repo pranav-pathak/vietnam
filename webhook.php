@@ -41,7 +41,7 @@ $json_obj = json_encode($data);
 // fwrite($myfile, "--------------test4----------------");
 // curl_close($ch);
                                                                                                                    
-$ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/fblog?t='.time());                                                                      
+$ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook_lead_ads?t='.time());                                                                      
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
 curl_setopt($ch, CURLOPT_HEADER, 0);                                                                
