@@ -22,21 +22,29 @@ $access_token ='EAAJEXHPyArwBAPlUz0JiQL2da5Fz6roaVT8mtASOTF4Bi14p30kWzEqcVNac2Pa
 
 if($input['entry'][0]['changes'][0]['value']['form_id'] == "1042674762487296"){
 $data = getLead($leadgen_id, $access_token);
-fwrite($myfile,'-3-\n lead_data : '. print_r($data, true));
+fwrite($myfile,'-3-\n lead_data : '.time(). print_r($data, true));
 $json_obj = json_encode($data);                    
-$ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook?t='.time());            
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                   
-curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
-curl_setopt($ch, CURLOPT_HEADER, 0);                                                                
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                                                                      
-curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                        
-'Content-Type: application/json',                                                                                
-'Content-Length: ' . strlen($json_obj))                                                                       
-);                                                            
-$result = curl_exec($ch);
+
+$ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook?t='.time());
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);
+// execute!
+$response = curl_exec($ch);
+// close the connection, release resources used
 curl_close($ch);
+// $ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook?t='.time());            
+// curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                   
+// curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);  
+// curl_setopt($ch, CURLOPT_HEADER, 0);                                                                
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);                                                                      
+// curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                        
+// 'Content-Type: application/json',                                                                                
+// 'Content-Length: ' . strlen($json_obj))                                                                       
+// );                                                            
+// $result = curl_exec($ch);
+// curl_close($ch);
 // fwrite($myfile, print_r($result, true));
-fwrite($myfile, "$$$$$ for test2 server ");
+fwrite($myfile, "$$$$$ for test2 server " .time());
 fclose($myfile);  
 }
 function getLead($leadgen_id,$user_access_token) {
