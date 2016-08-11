@@ -55,7 +55,7 @@ $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$use
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $graph_url);
 curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 $output = curl_exec($ch); 
 curl_close($ch);
