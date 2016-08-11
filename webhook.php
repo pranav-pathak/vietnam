@@ -26,7 +26,7 @@ fwrite($myfile,'-3-\n lead_data : '.time(). print_r($data, true));
 $json_obj = json_encode($data);                    
 
 $ch = curl_init('http://vietnam.test2.meadjohnson.net/webhook/facebook?t='.time());
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
 curl_setopt($ch, CURLOPT_POSTFIELDS, $json_obj);
 // execute!
 $response = curl_exec($ch);
@@ -55,7 +55,7 @@ $graph_url= 'https://graph.facebook.com/v2.5/'.$leadgen_id."?access_token=".$use
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $graph_url);
 curl_setopt($ch, CURLOPT_HEADER, 0);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
 $output = curl_exec($ch); 
 curl_close($ch);
